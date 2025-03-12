@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="home.css">
+        <style>
+            #menu{
+    background-color:#11a816;
+    padding:10px;
+    text-align: center;
+    font-size: 20px;
+}
+a{
+    color:white;
+    padding:10px;
+}
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center;"> Art Gallery</h1>
+        <div id="menu">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#">News</a>
+            <a href="gallery.html">Gallery</a>
+            <div id="log">
+                <a href="#">Login</a>
+            </div>
+        </div>
+        <h3 style="text-align: center;"> Address- 2 Shaker Rd d101, Shirley, MA 01464</h3>
+        <div class="container">
+            <div class="mySlides">
+                <div class="numbertext">1 / 6</div>
+                <img src="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?cs=srgb&dl=pexels-bri-schneiter-28802-346529.jpg&fm=jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 6</div>
+                <img src="https://images.pexels.com/photos/1107717/pexels-photo-1107717.jpeg?cs=srgb&dl=pexels-fotios-photos-1107717.jpg&fm=jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 6</div>
+                <img src="https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png" style="width:100%">
+            </div>
+                
+            <div class="mySlides">
+                <div class="numbertext">4 / 6</div>
+                <img src="https://media.istockphoto.com/id/583809524/photo/alberta-wilderness-near-banff.jpg?s=612x612&w=0&k=20&c=hiI3ib9ibDxAgqEZEH09EO3JOw94v5xh6hzcuXGhO-M=" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 6</div>
+                <img src="https://media.istockphoto.com/id/485371557/photo/twilight-at-spirit-island.jpg?s=612x612&w=0&k=20&c=FSGliJ4EKFP70Yjpzso0HfRR4WwflC6GKfl4F3Hj7fk=" style="width:100%">
+            </div>
+                
+            <div class="mySlides">
+                <div class="numbertext">6 / 6</div>
+                <img src="https://img.freepik.com/free-photo/nature-landscape-with-black-sand-beach_23-2151380342.jpg" style="width:100%">
+            </div>
+            
+            <center><h3>Some Famous Art</h3></center>
+
+            <!--Displaying Row-->
+            '
+            <div class="row-container">
+                <div class="column">   
+                <img class="demo cursor" src="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?cs=srgb&dl=pexels-bri-schneiter-28802-346529.jpg&fm=jpg" onclick="currentSlide(1)" alt="The Woods" width="100">
+                </div>
+
+                <div class="column">
+                <img class="demo cursor" src="https://images.pexels.com/photos/1107717/pexels-photo-1107717.jpeg?cs=srgb&dl=pexels-fotios-photos-1107717.jpg&fm=jpg"  onclick="currentSlide(2)" alt="Cinque Terre" width="100">
+                </div>
+
+                <div class="column">
+                <img class="demo cursor" src="https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png" onclick="currentSlide(3)" alt="Mountains and fjords" width="100">
+                </div>
+
+                <div class="column">
+                <img class="demo cursor" src="https://media.istockphoto.com/id/583809524/photo/alberta-wilderness-near-banff.jpg?s=612x612&w=0&k=20&c=hiI3ib9ibDxAgqEZEH09EO3JOw94v5xh6hzcuXGhO-M="  onclick="currentSlide(4)" alt="Northern Lights" width="100">
+                </div>
+
+                <div class="column">
+                <img class="demo cursor" src="https://media.istockphoto.com/id/485371557/photo/twilight-at-spirit-island.jpg?s=612x612&w=0&k=20&c=FSGliJ4EKFP70Yjpzso0HfRR4WwflC6GKfl4F3Hj7fk=" onclick="currentSlide(5)" alt="Nature and sunrise" width="100">
+                </div>    
+
+                <div class="column">
+                <img class="demo cursor" src="https://img.freepik.com/free-photo/nature-landscape-with-black-sand-beach_23-2151380342.jpg"  onclick="currentSlide(6)" alt="Snowy Mountains" width="100">
+                </div>
+            </div>
+
+            <center>
+                <button class="next" onclick="plusSlides(1)">
+                    Next
+                </button>
+            </center>
+        </div>
+
+        <script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) 
+    {
+        slideIndex = 1
+    }
+  if (n < 1) 
+    {
+        slideIndex = slides.length
+    }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  //captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    </body>
+</html>
